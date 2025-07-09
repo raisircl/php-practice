@@ -1,3 +1,6 @@
+<?php
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +10,9 @@
 </head>
 <body>
     
-    <h1>Welcome to 
+    <h1>Welcome  
     <?php
-    echo $_SESSION["user"];
+    
     if (isset($_SESSION["user"])) {
 
         echo $_SESSION["user"];
@@ -17,9 +20,13 @@
     }
     else
     {
-        echo "<h1>First login</h1>";
+        header("Location: login.php");
+        $_SESSION["errormsg"] ="login first for dashboard access";
+        
+        
     }
     ?>
-    dashboard....</h1>
+    to dashboard....</h1>
+    
 </body>
 </html>

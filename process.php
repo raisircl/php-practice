@@ -12,7 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     else
     {
-        echo "invalid user name or pwd";
+        header("Location: login.php");
+        $_SESSION["errormsg"] ="invalid user name or pwd";
+        
 
     }
 }
